@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/03/21 12:17:58 by ilazar           ###   ########.fr        #
+#    Updated: 2025/03/21 15:49:11 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,11 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = megaphone
+NAME = phonebook
 
-SRCS = megaphone.cpp
+INC = PhoneBook.hpp
+
+SRCS = PhoneBook.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
