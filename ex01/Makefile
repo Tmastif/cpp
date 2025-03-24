@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/03/21 15:49:11 by ilazar           ###   ########.fr        #
+#    Updated: 2025/03/24 10:39:30 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = phonebook
 
-INC = PhoneBook.hpp
+INC = PhoneBook.hpp Contact.hpp header.hpp
 
-SRCS = PhoneBook.cpp
+SRCS = main.cpp add.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -27,7 +27,7 @@ OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) -I. -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
