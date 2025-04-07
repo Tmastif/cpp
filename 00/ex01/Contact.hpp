@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 09:53:43 by ilazar            #+#    #+#             */
-/*   Updated: 2025/03/24 10:25:17 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/07 16:33:58 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 class Contact {
     
-    public:
         std::string first_name;
         std::string last_name;
         std::string nickname;

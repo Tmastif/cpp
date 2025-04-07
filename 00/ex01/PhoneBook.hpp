@@ -6,31 +6,32 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:37:27 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/01 18:21:40 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/07 16:34:44 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+
 class PhoneBook
 {
-	static const int MAX_CONTACTS = 8;
+	static const int MAX_CONTACTS = 3;
 	int contactCount;
+	int counter;
 	Contact contacts[MAX_CONTACTS];
 
   public:
-	PhoneBook() : contactCount(0){};
+	PhoneBook() : contactCount(0), counter(0){};
 
 	void addcontact(Contact newContact)
 	{
-		if (contactCount == MAX_CONTACTS)
-			contacts[contactCount % MAX_CONTACTS] = newContact;
-		else
-		{
-			contacts[contactCount] = newContact;
+		if (counter == MAX_CONTACTS)
+			counter = 0;
+		if (contactCount < MAX_CONTACTS)
 			contactCount++;
-		}
+		contacts[counter] = newContact;
+		counter++;
 	}
 
 	std::string truncStr(std::string str)
