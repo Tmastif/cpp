@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/21 15:37:27 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/07 16:34:44 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/08 14:15:48 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 class PhoneBook
 {
-	static const int MAX_CONTACTS = 3;
+	static const int MAX_CONTACTS = 8;
 	int contactCount;
 	int counter;
 	Contact contacts[MAX_CONTACTS];
@@ -52,9 +52,9 @@ class PhoneBook
 		for (int i = 0; i < contactCount; i++)
 		{
 			std::cout << std::setw(10) << i << "|"
-			<< std::setw(10) << truncStr(contacts[i].first_name) << "|"
-			<< std::setw(10) << truncStr(contacts[i].last_name) << "|"
-			<< std::setw(10) << truncStr(contacts[i].nickname) << std::endl;
+			<< std::setw(10) << truncStr(contacts[i].getFirstname()) << "|"
+			<< std::setw(10) << truncStr(contacts[i].getLastname()) << "|"
+			<< std::setw(10) << truncStr(contacts[i].getNickname()) << std::endl;
 		}
 	}
 
@@ -91,11 +91,11 @@ class PhoneBook
 					break ;
 				std::cout << "Chosen id is out of range.\n";
 			}
-			std::cout << contacts[id].first_name << std::endl;
-			std::cout << contacts[id].last_name << std::endl;
-			std::cout << contacts[id].nickname << std::endl;
-			std::cout << contacts[id].darkest_secret << std::endl;
-			std::cout << contacts[id].phone_nbr << std::endl;
+			std::cout << contacts[id].getFirstname() << std::endl;
+			std::cout << contacts[id].getLastname() << std::endl;
+			std::cout << contacts[id].getNickname() << std::endl;
+			std::cout << contacts[id].getSecret() << std::endl;
+			std::cout << contacts[id].getPhone() << std::endl;
 		}
 	}
 };

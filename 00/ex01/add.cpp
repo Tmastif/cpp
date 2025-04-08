@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 10:36:09 by ilazar            #+#    #+#             */
-/*   Updated: 2025/03/24 10:40:51 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/08 14:03:24 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ Contact   add(void)
     Contact     newContact;
     
     input = add_var("first name");
-    newContact.first_name = input;
+    newContact.setFirstname(input);
     input = add_var("last name");
-    newContact.last_name = input;
+    newContact.setLastname(input);
     input = add_var("nickname");
-    newContact.nickname = input;
+    newContact.setNickname(input);
     input = add_var("darkest's secret");
-    newContact.darkest_secret = input;
+    newContact.setSecret(input);
     input = add_var("phone number");
-    newContact.phone_nbr = input;
+    newContact.setPhone(input);
     return (newContact);
 }
