@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/27 11:19:46 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/07 14:09:25 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/09 14:37:19 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/09 16:16:12 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <fstream>
 #include <string>
 #include <iostream>
-#include <Weapon.hpp>
-#include <HumanA.hpp>
+#include <Replacer.hpp>
 
-
-HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon)
+int     main(int ac, char **av)
 {
-    this->name = name;
+    Replacer file;
+    
+    if (ac != 4)
+    {
+        std::cout << "The program excepts 3 parameters only\n";
+        return (1);
+    }
+
+    if (file.uploadSrcFile(av[1]))
+    {
+        if (file.replace(av[2], av[3]))
+        {
+            file.closeSrcFile();
+            return (0);
+        }    
+    }
+    return(1);
 }
 
-void    HumanA::attack(void)
-{
-    std::cout << this->name << " attacks with their " \
-    << this->weapon.getType() << std::endl;
-}
+
+
