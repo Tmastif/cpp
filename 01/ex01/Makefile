@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/04/10 14:02:44 by ilazar           ###   ########.fr        #
+#    Updated: 2025/03/27 10:21:24 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = a.out
+NAME = Zombie
 
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp Zombie.cpp randomChump.cpp newZombie.cpp zombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

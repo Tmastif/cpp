@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/04/10 14:02:44 by ilazar           ###   ########.fr        #
+#    Updated: 2025/03/27 11:04:34 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = a.out
 
-SRCS = main.cpp Harl.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
