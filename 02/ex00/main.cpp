@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/26 10:51:09 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/23 13:07:47 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/11 16:11:51 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/25 15:06:13 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#include <iostream>
+#include <Fixed.hpp>
 
-#include <string>
-
-class Zombie 
+int main( void ) 
 {
-    private:
-        std::string name;
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
 
-    public:
-        Zombie(std::string zombieName);
-        ~Zombie();
-        void    announce(void);
-};
-
-Zombie *newZombie(std::string name);
-void    randomChump(std::string name);
-
-#endif
+    //set bits test
+    c.setRawBits(4);
+    std::cout << c.getRawBits() << std::endl;
+    
+    return 0;
+}
