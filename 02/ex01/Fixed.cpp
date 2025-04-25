@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:13:11 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/25 12:31:11 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/25 15:42:06 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ Fixed::Fixed(const Fixed& original)
 }
 
 //Copy assignment
-Fixed&   Fixed::operator=(const Fixed& original)
+Fixed   &Fixed::operator=(const Fixed& original)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &original)
