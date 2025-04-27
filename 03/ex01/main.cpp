@@ -5,35 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:37:19 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/11 15:44:18 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/25 16:18:26 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/27 14:13:45 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
-#include <Replacer.hpp>
 
-int     main(int ac, char **av)
+int main(void)
 {
-    Replacer file;
+    ClapTrap a("Parent");
+    ScavTrap b("Child");
     
-    if (ac != 4)
-    {
-        std::cout << "The program excepts 3 parameters only\n";
-        return (1);
-    }
-
-    if (file.uploadSrcFile(av[1]))
-    {
-        if (file.replace(av[2], av[3]))
-        {
-            file.closeSrcFile();
-            return (0);
-        }    
-    }
-    return(1);
+    a.attack("Sauer");
+    a.takeDamage(5);
+    a.beRepaired(10);
+    
+    a.takeDamage(20);
+    
+    a.attack("Sauer");
+    a.beRepaired(10);
+    a.takeDamage(20);
+    
+    b.attack("Sauer");
+    b.takeDamage(100);
+    b.attack("Sauer");
+    b.guardGate();
+    
+    return (0);
 }
-
-
-

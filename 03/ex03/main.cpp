@@ -5,35 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 14:37:19 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/11 15:44:18 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/25 16:18:26 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/27 15:28:25 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 #include <iostream>
-#include <Replacer.hpp>
 
-int     main(int ac, char **av)
+int main(void)
 {
-    Replacer file;
+    // ScavTrap b("Scav_Child");
+    // FragTrap c("Frag_child");
+
+    DiamondTrap d("Diamond");
+    // d.attack("you");
+    d.whoAmI();
     
-    if (ac != 4)
-    {
-        std::cout << "The program excepts 3 parameters only\n";
-        return (1);
-    }
-
-    if (file.uploadSrcFile(av[1]))
-    {
-        if (file.replace(av[2], av[3]))
-        {
-            file.closeSrcFile();
-            return (0);
-        }    
-    }
-    return(1);
+    // b.attack("Sauer");
+    // b.takeDamage(100);
+    // b.guardGate();
+    
+    // c.attack("enemy");
+    // c.takeDamage(150);
+    // c.highFiveGuys();
+    
+    return (0);
 }
-
-
-
