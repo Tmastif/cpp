@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:40:10 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/28 11:16:44 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/28 11:49:45 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Dog : public Animal
         Dog& operator=(const Dog &other);
         ~Dog();
         
-        // void    makeSound() const;
+        void    makeSound() const;
 };
 
 #endif

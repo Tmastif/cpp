@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 10:42:49 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/28 11:51:04 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/28 11:55:39 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/28 12:06:34 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
+#include "Cat.hpp"
 
-Dog::Dog(void) : Animal()
+Cat::Cat(void) : Animal()
 {
-    _type = "Dog";
-    std::cout << "Dog constructor\n";
+    _type = "Cat";
+    std::cout << "Cat cntr\n";
 }
 
-Dog::Dog(const Dog &other) : Animal(other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
-    std::cout << "Dog copy constructor\n";
+    std::cout << "Cat copy cntr\n";
     _type = other._type;
 }
 
-Dog& Dog::operator=(const Dog &other)
+Cat& Cat::operator=(const Cat &other)
 {
-    std::cout << "Dog copy assigment\n";
+    std::cout << "Cat copy assigment\n";
     if (this != &other)
         _type = other._type;
     return (*this);
 }
 
-Dog::~Dog(void)
+Cat::~Cat(void)
 {
-    std::cout << "Dog destructor\n";
+    std::cout << "Cat destructor\n";
 }
 
-void    Dog::makeSound(void) const
+void    Cat::makeSound(void) const
 {
-    std::cout << "Dog sound! haw haw" << std::endl;
+    std::cout << "Cat sound! Miau Miau\n";
 }

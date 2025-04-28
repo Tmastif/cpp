@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:14:41 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/28 12:13:00 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/28 12:12:05 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 
-class Animal
+class WrongAnimal
 {
     protected:
         std::string _type;
     
     public:
-        Animal();
-        Animal(const Animal &other);
-        Animal &operator=(const Animal &other);
-        ~Animal();
+        WrongAnimal();
+        WrongAnimal(const WrongAnimal &other);
+        WrongAnimal &operator=(const WrongAnimal &other);
+        ~WrongAnimal();
         
         virtual void    makeSound() const {};
         std::string     getType() const;
 };
 
-std::ostream& operator<<(std::ostream& os, const Animal &animal);
+std::ostream& operator<<(std::ostream& os, const WrongAnimal &animal);
 
 //make sound is an empty virtual function.
 //Derived classes may optionally override it.
