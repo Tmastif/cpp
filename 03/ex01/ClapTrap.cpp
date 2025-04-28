@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:19:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/27 14:09:15 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/28 11:21:46 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 //Copy constructor
 ClapTrap::ClapTrap(const ClapTrap &other)
 {
-    std::cout << "Copy constructor called" << std::endl;
+    std::cout << "Clap copy constructor called" << std::endl;
     _name = other._name;
     _hit_points = other._hit_points;
     _energy_points = other._energy_points;

@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/25 15:19:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/28 11:28:38 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/28 10:14:20 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/28 11:15:16 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-
-
+#include "Animal.hpp"
+#include "Dog.hpp"
 #include <iostream>
-#include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+int     main(void)
 {
-    public:
-        ScavTrap(std::string name);
-        ScavTrap(const ScavTrap &other);
-        ScavTrap &operator=(const ScavTrap &other);
-        ~ScavTrap();
-        void attack(const std::string &target);
-        void guardGate();
-};
+    {
+        Animal animal;
+        std::cout << "class Animal - " << animal << std::endl;
+        Animal dony(animal);
+    }
+    
+    Dog dog;
 
-#endif
+    dog.makeSound();
+    std::cout << "class Dog - " << dog << std::endl;
+
+    Dog copydog(dog);
+    return (0);
+}

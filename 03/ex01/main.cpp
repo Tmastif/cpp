@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 16:18:26 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/27 14:13:45 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/28 11:27:41 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,15 @@
 
 int main(void)
 {
+    {
+        std::cout << "#######copy constructor test\n";
+        ScavTrap bb(b);
+    }
+    std::cout << "#######\n";
+    
     ClapTrap a("Parent");
     ScavTrap b("Child");
+
     
     a.attack("Sauer");
     a.takeDamage(5);

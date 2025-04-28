@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:19:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/27 15:20:04 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/28 11:32:10 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,30 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
     _energy_points = 100;
     _attack_damage = 30;
     std::cout << "Frag constructor called" << std::endl;
+}
+
+//Copy constructor
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other)
+{
+    std::cout << "Frag copy constructor called" << std::endl;
+    _name = other._name;
+    _hit_points = other._hit_points;
+    _energy_points = other._energy_points;
+    _attack_damage = other._attack_damage;
+}
+
+//Assigment Constructor
+FragTrap &FragTrap::operator=(const FragTrap &other)
+{
+    std::cout << "Frag copy assignment operator called" << std::endl;
+    if (this != &other)
+    {
+        _name = other._name;
+        _hit_points = other._hit_points;
+        _energy_points = other._energy_points;
+        _attack_damage = other._attack_damage;
+    }
+    return (*this);
 }
 
 //Destructor
