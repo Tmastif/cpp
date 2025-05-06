@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 11:07:44 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:23 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/28 11:52:05 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/30 11:03:51 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
-
+#include "Animal.hpp"
+#include "Brain.hpp"
 #include <iostream>
-#include "ICharacter.hpp"
 
-class AMateria
+class Cat : public Animal
 {
+    private:
+        Brain *brain;
     
-protected:
-    std::string _type;
-    
-public:
-    AMateria(std::string const &type);
-    AMateria(const AMateria &other);
-    AMateria &operator=(const AMateria &other);
-    virtual ~AMateria();
-    
-    std::string const &getType() const; //Returns the materia type
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter &target) {};
+    public:
+        Cat();
+        Cat(const Cat &other);
+        Cat& operator=(const Cat &other);
+        ~Cat();
 
+        void    makeSound() const;
+        void    setIdea(std::string idea, int nbr);
+        void    seeIdeas() const;
+        
 };
 
 #endif

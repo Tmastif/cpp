@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 11:07:44 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:23 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/29 14:12:04 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/29 16:33:00 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef AMATERIA_HPP
-#define AMATERIA_HPP
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
 #include <iostream>
-#include "ICharacter.hpp"
 
-class AMateria
+class Brain 
 {
+    private:
+        std::string ideas[100];
+        int         arr_size;
     
-protected:
-    std::string _type;
+    public:
+        Brain();
+        Brain (const Brain &other);
+        Brain& operator=(const Brain &other);
+        ~Brain();
+        
+        std::string    getIdea(int nbr) const;
+        void           setIdea(std::string idea, int nbr);
+        void           seeIdeas(void) const;
     
-public:
-    AMateria(std::string const &type);
-    AMateria(const AMateria &other);
-    AMateria &operator=(const AMateria &other);
-    virtual ~AMateria();
-    
-    std::string const &getType() const; //Returns the materia type
-    virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter &target) {};
-
 };
+
 
 #endif

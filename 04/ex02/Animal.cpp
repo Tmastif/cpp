@@ -1,55 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:14:41 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/29 13:57:13 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/29 17:02:44 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "WrongAnimal.hpp"
+#include "Animal.hpp"
 
 
-WrongAnimal::WrongAnimal(void) : _type("WrongAnimal")
+Animal::Animal(void) : _type("Animal")
 {
-    std::cout << "WrongAnimal constructor\n";
+    std::cout << "Animal constructor\n";
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal &other)
+Animal::Animal(const Animal &other)
 {
     _type = other._type;
-    std::cout << "WrongAnimal copy constructor\n";
+    std::cout << "Animal copy constructor\n";
 }
 
-WrongAnimal& WrongAnimal::operator=(const WrongAnimal &other)
+Animal& Animal::operator=(const Animal &other)
 {
-    std::cout << "WrongAnimal copy assigment operator\n";
+    std::cout << "Animal copy assigment operator\n";
     if (this != &other)
         _type = other._type;
     return (*this);
 }
 
-WrongAnimal::~WrongAnimal(void)
+
+Animal::~Animal(void)
 {
-    std::cout << "WrongAnimal destructor\n";
+    std::cout << "Animal destructor\n";
 }
 
-std::string     WrongAnimal::getType(void) const
+std::string     Animal::getType(void) const
 {
     return (_type);
 }
 
-void    WrongAnimal::makeSound(void) const
-{
-    std::cout << "WrongAnimal sound! Wrong Wrong\n";
-}
-
 //Representation
-std::ostream& operator<<(std::ostream& os, const WrongAnimal& animal)
+std::ostream& operator<<(std::ostream& os, const Animal& animal)
 {
     os << "My type is: " << animal.getType();
     return os;
+}
+
+
+void    Animal::setIdea(std::string idea, int nbr)
+{
+    (void) idea;
+    (void) nbr;
 }

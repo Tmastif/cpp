@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:19:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/28 11:40:31 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/29 13:31:28 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 //Default constructor
 DiamondTrap::DiamondTrap(std::string name) 
-: ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name)
+: ClapTrap(name + "_clapTrap"), FragTrap(name), ScavTrap(name)
 {
     _name = name;
     ClapTrap::_name = name + "_clap_name";
@@ -69,4 +69,14 @@ void    DiamondTrap::whoAmI(void)
 {
     std::cout << "my name: " <<_name <<
     "\nmy ClapTrap's name: " << ClapTrap::_name << std::endl;
+}
+
+void    DiamondTrap::highFiveGuys(void)
+{
+    std::cout << "DiamondTrap requests a high five!\n";
+}
+
+void    DiamondTrap::guardGate(void)
+{
+    std::cout << "DiamondTrap is now in Gate keeper mode\n";
 }

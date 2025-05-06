@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 16:18:26 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/27 14:23:07 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/29 13:24:12 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,27 @@
 
 int main(void)
 {
-    ClapTrap a("Parent");
-    ScavTrap b("Scav_Child");
+
+    {
+        std::cout << "#####Frag created:\n";
+        FragTrap c("Frag_child");
+        std::cout << "#####Frag deleted:\n";
+    }
+    std::cout << "\n";
+    {
+        ClapTrap a("Parent");
+        ScavTrap b("Scav_Child");
+    
+        std::cout << "\n";
+        a.attack("Sauer");
+        a.takeDamage(20);
+        std::cout << "\n";
+        b.attack("Sauer");
+        b.guardGate();
+    }
+    std::cout << "\n";
     FragTrap c("Frag_child");
-    
-    a.attack("Sauer");
-    a.takeDamage(5);
-    a.beRepaired(10);
-    a.takeDamage(20);
-    
-    b.attack("Sauer");
-    b.takeDamage(100);
-    b.attack("Sauer");
-    b.guardGate();
-    
     c.attack("enemy");
-    c.takeDamage(150);
-    c.beRepaired(20);
     c.highFiveGuys();
     
     return (0);

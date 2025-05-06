@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 10:14:41 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/29 13:56:42 by ilazar           ###   ########.fr       */
+/*   Created: 2025/04/28 10:40:10 by ilazar            #+#    #+#             */
+/*   Updated: 2025/04/30 11:03:56 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <iostream>
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class WrongAnimal
+class Dog : public Animal
 {
-    protected:
-        std::string _type;
+    private:
+        Brain *brain;
     
     public:
-        WrongAnimal();
-        WrongAnimal(const WrongAnimal &other);
-        WrongAnimal &operator=(const WrongAnimal &other);
-        ~WrongAnimal();
+        Dog();
+        Dog(const Dog &other);
+        Dog& operator=(const Dog &other);
+        ~Dog();
         
-        void    makeSound() const;
-        std::string     getType() const;
+        void          makeSound() const;
+        void          setIdea(std::string idea, int nbr);
+        void          seeIdeas() const;
+        
 };
-
-std::ostream& operator<<(std::ostream& os, const WrongAnimal &animal);
 
 #endif

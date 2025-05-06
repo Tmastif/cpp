@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:19:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/28 11:25:23 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/04/29 13:17:17 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void    ScavTrap::attack(const std::string &target)
 {
     if (_hit_points > 0 && _energy_points > 0)
     {
-        std::cout << "ScavTrap " << _name << " attacks " << 
+        std::cout << "ScavTrap " << _name << " bravely attacks " << 
         target << " causing " << _attack_damage << 
         " points of damage!\n";
         _energy_points--;
