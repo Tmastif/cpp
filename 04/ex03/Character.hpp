@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 15:36:41 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/07 12:49:41 by ilazar           ###   ########.fr       */
+/*   Created: 2025/05/07 12:54:39 by ilazar            #+#    #+#             */
+/*   Updated: 2025/05/07 13:01:19 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class ICharacter
+class Character
 {
+    private:
+        AMateria *inventory[4];
     public:
-        virtual ~ICharacter() {}
-        virtual std::string const & getName() const = 0;
-        // virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
-};
+        Character();
+        Character(const Character &other);
+        Character& operator=(const Character &other);
+        ~Character();
+        
+        
+}

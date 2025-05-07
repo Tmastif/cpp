@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:42:54 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/06 15:55:01 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/07 13:10:46 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,17 @@ Ice::Ice() : AMateria("ice")
     std::cout << "Ice cntr\n";
 }
 
+// Ice& Ice::operator=(const Ice &other)
+// {
+//     std::cout << "Ice copy assigment\n";
+//     if (this != &other)
+//         _type = other._type;
+//     return (*this);
+// }
+
 AMateria*   Ice::clone() const
 {
-    Ice *tmp = new Ice();
-    return (tmp);
+    return (new Ice(*this));
 }
 
 void        Ice::use(ICharacter& target)

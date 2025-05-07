@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 15:36:41 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/07 12:49:41 by ilazar           ###   ########.fr       */
+/*   Created: 2025/05/07 12:42:58 by ilazar            #+#    #+#             */
+/*   Updated: 2025/05/07 13:11:47 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Ice.hpp"
 
-class ICharacter
+int main(void)
 {
-    public:
-        virtual ~ICharacter() {}
-        virtual std::string const & getName() const = 0;
-        // virtual void equip(AMateria* m) = 0;
-        virtual void unequip(int idx) = 0;
-        virtual void use(int idx, ICharacter& target) = 0;
-};
+    
+    //cloning / copy cntr / assigment cntr
+    Ice one;
+    AMateria *two = one.clone();
+    std::cout << "type after cloning ice: " << two->getType() << std::endl;
+    
+    Ice three; 
+    three = one;
+    std::cout << "materia type after assiging from ice: " << three.getType() << std::endl;
+    
+    
+    
+    return (0);
+}

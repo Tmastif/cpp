@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 11:07:44 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/06 15:36:23 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/07 12:47:50 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ public:
     
     std::string const &getType() const; //Returns the materia type
     virtual AMateria* clone() const = 0;
-    virtual void use(ICharacter &target) {};
+    virtual void use(ICharacter &target) { (void)target; };
 
 };
 
