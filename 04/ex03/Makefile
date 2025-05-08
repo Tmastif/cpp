@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/05/08 15:16:52 by ilazar           ###   ########.fr        #
+#    Updated: 2025/05/08 18:04:23 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = a.out
 
-SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp
+SRCS = main.cpp AMateria.cpp Ice.cpp Cure.cpp Character.cpp \
+		MateriaSource.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

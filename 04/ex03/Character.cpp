@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 13:27:22 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/08 14:36:17 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/08 17:17:07 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ Character::Character(std::string name) : _name(name)
 {
     std::cout << "Character cntr\n";
     for (int i = 0; i < _slots; i++)
-    {
         _inventory[i] = NULL;
-    }
 }
 
 Character::Character(void)
@@ -35,9 +33,14 @@ Character::Character(void)
 Character::Character(const Character &other)
 {
     std::cout << "Character copy cntr\n";
-    this->deleteInventory();
+    _name = other._name;
     for (int i = 0; i < _slots; i++)
-        _inventory[i] = other._inventory[i];
+    {
+        if (other._inventory[i] == NULL)
+            _inventory[i] = NULL;
+        else
+            _inventory[i] = other._inventory[i]->clone();
+    }
 }
 
 Character& Character::operator=(const Character &other)
@@ -45,9 +48,15 @@ Character& Character::operator=(const Character &other)
     std::cout << "Character copy assigment\n";
     if (this != &other)
     {
+        _name = other._name;
         this->deleteInventory();
         for (int i = 0; i < _slots; i++)
-            _inventory[i] = other._inventory[i];
+        {
+            if (other._inventory[i] == NULL)
+                _inventory[i] = NULL;
+            else
+                _inventory[i] = other._inventory[i]->clone();
+        }
     }
     return (*this);
 }

@@ -6,14 +6,14 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:42:54 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/08 15:20:58 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/08 18:11:45 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("ice")
+Cure::Cure() : AMateria("cure")
 {
     std::cout << "Cure cntr\n";
 }
