@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:14:20 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/29 14:03:06 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:18:51 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,20 @@ int     main(void)
     std::cout << wrongCat->getType() << " " << std::endl;
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
-    wrongCat->makeSound();
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    wrongMeta->makeSound();
-    const WrongCat* wCat = new WrongCat();
-    wCat->makeSound();
 
+    std::cout << "#cat sound:\n";
+    i->makeSound();
+    std::cout << "#dog sound:\n";
+    j->makeSound();
+    std::cout << "#Meta animal sound: (no sound)\n";
+    meta->makeSound();
+    std::cout << "#Meta wrong animal sound:\n";
+    wrongMeta->makeSound();
+    std::cout << "#wrong cat made of wrong animal - Wrong animal sound:\n";
+    wrongCat->makeSound();
+    const WrongCat* wCat = new WrongCat();
+    std::cout << "#wrong cat made out of wrong cat - Wrong cat sound:\n";
+    wCat->makeSound();
     
     std::cout << "\n##MY TESTS##\n";
     {

@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:14:20 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/29 18:18:13 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:34:03 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,13 @@
 
 void    testBrainClass(void);
 void    testAnimalArray(void);
-void    testDeepCopy(std::string which);
+void    testDeepCopy(void);
 
 int     main(void)
 {
     testBrainClass();
     testAnimalArray();
-    testDeepCopy("dog");
-    testDeepCopy("cat");
+    testDeepCopy();
 
     return (0);
 }
@@ -81,45 +80,27 @@ void    testAnimalArray(void)
     }
 }
 
-void    testDeepCopy(std::string which)
+void    testDeepCopy(void)
 {
-    std::cout << "##Test deep copy:##\n";
-    if (which == "dog")
+    std::cout << "\n##Test deep copy:##\n";
     {
-        Dog dog;
-         
-        dog.setIdea("scratch", 0);
-        dog.setIdea("chase squirrl", 1);
-        dog.setIdea("steal food", 2);
-        dog.seeIdeas();
-        {
-            Dog seconed(dog);
-            seconed.seeIdeas();
-        }
+        std::cout << "creating dog and setting 3 ideas:\n";
+        Dog *dog = new Dog();
+        dog->setIdea("scratch", 0);
+        dog->setIdea("chase squirrl", 1);
+        dog->setIdea("steal food", 2);
+        dog->seeIdeas();
+        std::cout << "#deep copying to 2nd dog:\n";
+        Dog seconed(*dog);
+        std::cout << "#deleting original dog:\n";
+        delete dog;
+        std::cout << "#ideas still exist in 2nd dog:\n";
+        seconed.seeIdeas();
         std::cout << "\n";
         {
-            Dog seconed;
-            seconed = dog;
-            seconed.seeIdeas();
-        }
-        std::cout << "\n";
-    }
-    else if (which == "cat")
-    {
-        Cat cat;
-        cat.setIdea("scratch", 0);
-        cat.setIdea("chase squirrl", 1);
-        cat.setIdea("steal food", 2);
-        cat.seeIdeas();
-        {
-            Cat seconed(cat);
-            seconed.seeIdeas();
-        }
-        std::cout << "\n";
-        {
-            Cat seconed;
-            seconed = cat;
-            seconed.seeIdeas();
+            Dog third;
+            third = seconed;
+            third.seeIdeas();
         }
         std::cout << "\n";
     }

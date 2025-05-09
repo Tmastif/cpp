@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 14:11:54 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/29 16:39:26 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:20:13 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ Brain::Brain (const Brain &other)
         ideas[i] = other.ideas[i];
     }
 }
-
 
 Brain& Brain::operator=(const Brain &other)
 {

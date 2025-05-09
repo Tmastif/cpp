@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 17:37:46 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/08 18:04:06 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/09 14:00:21 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class MateriaSource : public IMateriaSource
 {
     private:
-        AMateria *          _templates[4];
         static const int    _slots = 4;
+        AMateria *          _templates[_slots];
     
     public:
         MateriaSource();

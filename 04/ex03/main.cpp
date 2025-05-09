@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:42:58 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/08 18:19:05 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/09 14:01:38 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,9 @@ void    test_materiaSource(void)
     delete cure2;
     std::cout << "#trying to create type that doesn't exists:\n";
     source->createMateria("ice");
+    std::cout << "#creating and teaching type Ice:\n";
+    AMateria *ice = new Ice();
+    source->learnMateria(ice);
     std::cout << "#clean delete:\n";
     delete source;
 }

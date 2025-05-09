@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:54:39 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/08 14:05:35 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/09 13:59:59 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class Character : public ICharacter
 {
     private:
-        AMateria *          _inventory[4];
-        std::string         _name;
         static const int    _slots = 4;
+        std::string         _name;
+        AMateria *          _inventory[_slots];
         
     public:
         Character();
