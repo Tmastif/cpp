@@ -6,16 +6,20 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:51:30 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 15:09:13 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/21 16:35:03 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.h"
+#include "Form.h"
 #include <ostream>
 
 int     main(void)
 {
-    {
+    Form b("form", 20, 100);
+    
+
+    /* {
         std::cout << "instantiating a bureaucrat:\n";
         Bureaucrat one("Ted", 2);
         std::cout << "using copy cntr:\n";
@@ -47,7 +51,7 @@ int     main(void)
     catch(const std::exception& e)
     {
         std::cout << e.what() << '\n';
-    }
+    }*/
 
     
     return (0);

@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 11:29:27 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 15:42:04 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/21 15:41:50 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ class Bureaucrat
                     return ("Bureaucrat: Grade is too low");
                 }
         };
+
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat &bur);
