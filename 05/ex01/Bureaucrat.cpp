@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 11:59:06 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 16:14:08 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/26 16:08:53 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,20 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat &bur)
         << ", bureaucrat grade "
         << bur.getGrade() << std::endl;
         return (os);
+}
+
+void    Bureaucrat::signForm(Form &f)
+{
+        try 
+        {        
+                f.beSigned(*this);
+        }
+        catch (std::exception &e)
+        {
+                std::cout << _name
+                << " couldn't sign "
+                << f.getName()
+                << " because "
+                << e.what() << std::endl;        
+        }
 }

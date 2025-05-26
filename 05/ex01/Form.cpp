@@ -6,16 +6,26 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:47:49 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 16:33:55 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/26 15:57:24 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.h"
+#include "Bureaucrat.h"
 #include <iostream>
 
 Form::Form(const std::string &name, int signGrade, int excuteGrade) :
 _name(name), _signGrade(signGrade), _executeGrade(excuteGrade)
 {
+    if (signGrade < highestGrade)
+            throw GradeTooHighException();
+    if (signGrade > lowestGrade)
+            throw GradeTooLowException();
+    if (excuteGrade < highestGrade)
+            throw GradeTooHighException();
+    if (excuteGrade > lowestGrade)
+            throw GradeTooLowException();
+    _isSigned = false;
     std::cout << _name << " form has constructed\n";
 }
 
@@ -63,14 +73,30 @@ int     Form::getExecuteGrade(void) const
 }
 
 
+void    Form::beSigned(const Bureaucrat &b)
+{
+    if (b.getGrade() <= _signGrade)
+    {
+        _isSigned = true;
+        std::cout << _name <<" has been signed\n";
+    }
+    else
+        throw (GradeTooLowException());
+}
+
+
 std::ostream& operator<<(std::ostream &os, const Form &form)
 {
     os << form.getName()
-    << " required sign grade: "
+    << " Required sign grade: "
     <<  form.getSignGrade()
-    << " required execute grade: "
+    << ". Required execute grade: "
     <<  form.getExecuteGrade()
-    << " is signed: " << form.getIsSigned()
-    << std::endl;
+    << ". Form signed: ";
+    if (form.getIsSigned())
+        os << "Yes\n";
+    else
+        os << "No\n";
     return(os);
 }
+

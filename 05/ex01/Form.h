@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:15:40 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 16:33:40 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/05/26 15:55:46 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define FORM_H
 
 #include <ostream>
+
+class Bureaucrat;
 
 class Form
 {
@@ -24,6 +26,9 @@ class Form
         int const _executeGrade;
 
     public:
+        static const int lowestGrade = 150;
+        static const int highestGrade = 1;
+        
         Form(const std::string &name, int signGrade, int excuteGrade);
         Form(const Form &other);
         Form& operator=(const Form &other);
@@ -33,7 +38,8 @@ class Form
         bool        getIsSigned(void) const;
         int         getSignGrade(void) const;
         int         getExecuteGrade(void) const;
-
+        void        beSigned(const Bureaucrat &b);
+        
         class GradeTooHighException : public std::exception
         {
             public:
