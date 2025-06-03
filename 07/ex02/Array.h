@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 18:23:58 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/02 20:02:30 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/03 15:35:12 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ class Array
         ~Array();
         Array(const Array &other);
         Array& operator=(const Array &other);
+        T& operator[](unsigned int index);
+        const T& operator[](unsigned int index) const;
+        
 
         int     size(void) const;
 };
