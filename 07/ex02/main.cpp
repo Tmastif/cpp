@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:42:12 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/03 16:00:27 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/04 14:57:16 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,13 @@ int     main(void)
     const Array<int> e = b;
     std::cout << "Const e[2]: " << e[2] << std::endl; // Expected: 20
     // e[2] = 5; // Should not compile
+
+
+    // Different types of arrays
+    Array<std::string> strArr(3);
+    strArr[0] = "Bear";
+    std::cout << strArr[0] << std::endl; //expected: Bear
+    
 
     return (0);
 }

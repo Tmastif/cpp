@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   B.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:12:42 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/01 14:54:04 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/04 14:23:39 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,4 @@
 B::~B()
 {
     std::cout << "B's destructor\n";
-}
-
-void B::printId(void)
-{
-    std::cout << "I am class B\n";
 }

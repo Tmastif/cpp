@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:04:15 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/01 14:59:37 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/04 14:23:08 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,32 @@
 
 void Base::identify(Base &p)
 {
-    std::cout << "ref check\n";
-    p.printId();
+    try {
+        (void)dynamic_cast<A&>(p);
+        std::cout << "I am A" << std::endl;
+        return;
+    } catch (...) {}
+    
+    try {
+        (void)dynamic_cast<B&>(p);
+        std::cout << "I am B" << std::endl;
+        return;
+    } catch (...) {}
+    
+    try {
+        (void)dynamic_cast<C&>(p);
+        std::cout << "I am C" << std::endl;
+    } catch (...) {}
 }
 
 void Base::identify(Base *p)
 {
-    std::cout << "pointer check\n";
-    p->printId();
+    if (dynamic_cast<A*>(p) != NULL)
+        std::cout << "I am A" << std::endl;
+    else if (dynamic_cast<B*>(p))
+        std::cout << "I am B" << std::endl;
+    else if (dynamic_cast<C*>(p))
+        std::cout << "I am C" << std::endl;
 }
 
 Base * Base::generate(void)
@@ -35,7 +53,7 @@ Base * Base::generate(void)
     Base *base;
     int random;
     
-    // srand(time(NULL));
+    base = NULL;
     random = rand() % 3;
     switch (random)
     {

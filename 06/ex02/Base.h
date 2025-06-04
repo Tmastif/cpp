@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:04:15 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/01 14:38:30 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/04 17:51:41 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class Base
         Base *          generate(void);
         void            identify(Base* p);
         void            identify(Base& p);
-        virtual void    printId(void) {};
-        
 };
 
 #endif

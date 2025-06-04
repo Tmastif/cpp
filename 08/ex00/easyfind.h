@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.cpp                                              :+:      :+:    :+:   */
+/*   easyfind.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 14:12:42 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/04 14:24:13 by ilazar           ###   ########.fr       */
+/*   Created: 2025/06/04 13:14:12 by ilazar            #+#    #+#             */
+/*   Updated: 2025/06/04 13:29:07 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "C.h"
-#include <iostream>
+#pragma once
 
-C::~C()
+template <typename T>
+int easyfind(T &contain, int nbr)
 {
-    std::cout << "C's destructor\n";
+    
 }
