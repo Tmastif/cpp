@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+         #
+#    By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/06/05 18:47:59 by ilazar           ###   ########.fr        #
+#    Updated: 2025/06/06 21:03:18 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = a.out
 
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
