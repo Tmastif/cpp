@@ -1,0 +1,34 @@
+Parse and Store the Bitcoin Price Database
+Read the CSV file containing historical bitcoin prices (date, price).
+
+Store the data in a container that allows efficient lookup of the closest lower date (e.g., a sorted associative container like std::map in C++98, mapping date strings or comparable date objects to prices).
+
+Parse dates into a comparable form (either as strings in "YYYY-MM-DD" format or as a custom struct or integer for efficient comparison).
+
+2. Parse the Input File
+Read each line from the input file (format: "date | value").
+
+Validate the date format and value (must be a float or positive integer, between 0 and 1000).
+
+Parse the date and value, handling any parsing errors or invalid lines gracefully.
+
+3. For Each Input Line: Find the Appropriate Exchange Rate
+Search for the input date in the bitcoin price database.
+
+If the date exists, use its price.
+
+If the date does not exist, find the closest lower date (not a higher one). With a sorted map, this is a lower_bound or equivalent operation.
+
+If there is no lower or equal date, handle as an error or skip.
+
+4. Compute and Output the Result
+Multiply the input value by the found exchange rate.
+
+Output the result in the required format, associating it with the input date and value.
+
+5. Error Handling and Edge Cases
+Handle invalid input lines (bad format, out-of-range values, invalid dates).
+
+Handle missing exchange rates (no earlier date in the database).
+
+Handle duplicate dates in the database (if any).
