@@ -6,13 +6,13 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 23:21:43 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/07 14:18:35 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/09 11:04:40 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include <iostream>
-#include "Parser.h"
+#include "Btc.h"
 
 
 
@@ -20,9 +20,12 @@ int     main(int ac, char **av)
 {
     if (ac == 2)
     {
-        Parser parse("data.csv", av[1]);
-        parse.ParseData();
-        parse.printMap();
+        Btc btc("data.csv", av[1]);
+        btc.ParseData();
+        // btc.printMap(btc.getData());
+        btc.readInputFile();
+        // btc.printMap(btc.getInput());
+        btc.exchange();
         return (0);
     }
     std::cout << "Please enter one input file\n";

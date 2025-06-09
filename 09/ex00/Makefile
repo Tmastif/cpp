@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/06/07 11:13:33 by ilazar           ###   ########.fr        #
+#    Updated: 2025/06/08 13:44:55 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = a.out
 
-SRCS = main.cpp Parser.cpp
+SRCS = main.cpp Btc.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
