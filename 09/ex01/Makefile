@@ -6,7 +6,7 @@
 #    By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/21 12:14:22 by ilazar            #+#    #+#              #
-#    Updated: 2025/06/09 13:30:29 by ilazar           ###   ########.fr        #
+#    Updated: 2025/06/09 13:31:23 by ilazar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ CC = c++
 
 FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = btc
+NAME = RPN
 
-SRCS = main.cpp Btc.cpp
+SRCS = main.cpp RPN.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

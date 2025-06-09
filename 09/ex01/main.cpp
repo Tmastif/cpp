@@ -5,29 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/06 23:21:43 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/09 13:44:38 by ilazar           ###   ########.fr       */
+/*   Created: 2025/06/09 13:31:31 by ilazar            #+#    #+#             */
+/*   Updated: 2025/06/09 18:54:36 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "RPN.h"
 
-#include <iostream>
-#include "Btc.h"
-
-
-
-int     main(int ac, char **av)
+int main(int ac, char **av)
 {
+    RPN riddle;
+
     if (ac == 2)
     {
-        Btc btc("data.csv", av[1]);
-        btc.ParseData();
-        // btc.printMap(btc.getData());
-        btc.readInputFile();
-        // btc.printMap(btc.getInput());
-        btc.exchange();
+        riddle.solve(av[1]);
         return (0);
     }
-    std::cout << "Please enter one input file\n";
     return (1);
 }

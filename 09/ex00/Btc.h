@@ -34,8 +34,13 @@ class Btc
         std::string     extractValue(const std::string &line) const;
     
     public:
+        //constructors destructors
         Btc(const std::string &dataPath, const std::string &inputPath);
+        ~Btc();
+        Btc(const Btc &other);
+        Btc& operator=(const Btc &other);
         
+        //functions
         bool    ParseData(void);
         bool    readInputFile(void);
         bool    exchange(void) const;

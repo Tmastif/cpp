@@ -17,6 +17,23 @@
 Btc::Btc(const std::string &dataPath, const std::string &inputPath)
  : _dataPath(dataPath), _inputPath(inputPath) {}
 
+Btc::~Btc(void) {}
+
+Btc::Btc(const Btc &other) : _dataPath(other._dataPath), _inputPath(other._inputPath) {}
+
+Btc& Btc::operator=(const Btc &other)
+{
+    if (this != &other)
+    {
+        _inputPath = other._inputPath;
+        _dataPath = other._dataPath;
+        _input = other._input;
+        _data = other._data;
+    }
+    return (*this);
+}
+
+
 
 //FUNCTIONS
 
