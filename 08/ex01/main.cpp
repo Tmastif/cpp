@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:45:23 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/06 11:07:25 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/06 22:44:37 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int main(void)
     
     try
     {
-        // Insert 10,000 numbers (should succeed)
+        // Insert 10,000 numbers
         sp.multiNumbers(nums.begin(), nums.end());
         std::cout << "Inserted 10000 numbers successfully." << std::endl;
 
-        // Insert 3 more numbers (should succeed and fill the Span)
+        // Insert 3 more numbers (should fill the Span)
         int more[] = {40, 50, 60};
         sp.multiNumbers(more, more + 3);
         std::cout << "Inserted 3 more numbers successfully." << std::endl;
