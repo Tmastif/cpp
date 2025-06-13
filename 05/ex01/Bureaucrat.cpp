@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 11:59:06 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/26 16:08:53 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:23:11 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ void    Bureaucrat::signForm(Form &f)
         try 
         {        
                 f.beSigned(*this);
+                std::cout << _name << " signed " << f.getName() << "\n";
         }
         catch (std::exception &e)
         {

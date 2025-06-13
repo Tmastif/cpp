@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:47:49 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/26 19:37:31 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:33:18 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void    AForm::beSigned(const Bureaucrat &b)
     if (b.getGrade() <= _signGrade)
     {
         _isSigned = true;
-        std::cout << _name <<" has been signed\n";
     }
     else
         throw (GradeTooLowException());

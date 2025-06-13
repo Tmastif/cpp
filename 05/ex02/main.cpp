@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:51:30 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/26 23:42:27 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:39:10 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void    testShrubbery(Bureaucrat &a)
     std::cout << "\n##Signing the form and trying again:\n";
     try
     {
-        one.beSigned(a); 
+        a.signForm(one);
     }
     catch (const std::exception &e)
     {
@@ -62,7 +62,7 @@ void    testRobotomy(Bureaucrat &a)
     std::cout << "\n##Signing the form and trying again:\n";
     try
     {
-        one.beSigned(a); 
+        a.signForm(one);
     }
     catch (const std::exception &e)
     {
@@ -80,7 +80,7 @@ void    testPardon(Bureaucrat &a)
     std::cout << "\n##Signing the form and trying again:\n";
     try
     {
-        one.beSigned(a); 
+        a.signForm(one);
     }
     catch (const std::exception &e)
     {
