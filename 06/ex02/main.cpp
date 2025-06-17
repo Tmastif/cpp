@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:42:12 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/04 14:24:59 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/17 15:48:24 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int     main(void)
     Base *one = base.generate();
     base.identify(*one);
     delete (one);
+    
+    std::cout << "\n";
     
     return (0);
 }

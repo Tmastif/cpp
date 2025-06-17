@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:31:17 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/01 12:27:57 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/17 15:12:40 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,6 @@
 #include <climits>
 #include <cmath>
 #include <cerrno>
-// #include <sstream>
-// #include <iomanip>
-
 
 
 void ScalarConverter::convert(const std::string &literal)
@@ -88,6 +85,9 @@ bool ScalarConverter::isDouble(const std::string &s)
 
 void ScalarConverter::printConversions(float f)
 {
+    const float max_safe = 2147483520.0f;
+    const float min_safe = -2147483648.0f;
+
     if (f < CHAR_MIN || f > CHAR_MAX || std::isnan(f) || std::isinf(f))
         std::cout << "char: impossible" << std::endl;
     else if (!isprint(static_cast<char>(f)))
@@ -95,7 +95,7 @@ void ScalarConverter::printConversions(float f)
     else
         std::cout << "char: '" << static_cast<char>(f) << "'" << std::endl;
 
-    if (f < INT_MIN || f > INT_MAX || std::isnan(f) || std::isinf(f))
+    if (f < min_safe || f > max_safe || std::isnan(f) || std::isinf(f))
         std::cout << "int: impossible" << std::endl;
     else
         std::cout << "int: " << static_cast<int>(f) << std::endl;
@@ -112,7 +112,8 @@ void ScalarConverter::printConversions(float f)
         std::cout << "\n";
 }
 
-bool ScalarConverter::isFloat(const std::string &s) {
+bool ScalarConverter::isFloat(const std::string &s)
+{
     if (s.empty() || s[s.length() - 1] != 'f')
         return false;
     std::string num = s.substr(0, s.length() - 1);
@@ -138,7 +139,7 @@ bool ScalarConverter::isInt(const std::string &literal)
 {
     if (literal.empty() || literal == "-" || literal == "+")
         return false;
-    char* endptr;
+    char *endptr;
     errno = 0;
     long val = strtol(literal.c_str(), &endptr, 10);
     if (endptr != literal.c_str() + literal.length())
@@ -163,7 +164,11 @@ bool ScalarConverter::isChar(const std::string &literal)
     }
     return (false);
 }
-
+/*
+inf - infinite
+nan - not a numer (not a valid number)
+inff/nanf - same for float
+*/
 bool ScalarConverter::specialCases(const std::string &literal)
 {
     float       f;
@@ -191,11 +196,9 @@ bool ScalarConverter::specialCases(const std::string &literal)
         else if (literal == "+inf")
             d = std::numeric_limits<double>::infinity();
         else
-        {
             d = std::numeric_limits<double>::quiet_NaN();
-            std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
-            std::cout << "double: " << d << std::endl;
-        }
+        std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+        std::cout << "double: " << d << std::endl;
         return (true);
     }
     return (false);

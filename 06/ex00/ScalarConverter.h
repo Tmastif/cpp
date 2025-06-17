@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/31 15:31:17 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/01 12:25:24 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/17 13:29:21 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class ScalarConverter
 
 /* 
 - the destructor is redundant but mentioned to fit the rules
-it is public as recommended practice to avoid possible issues with inheritance.
+it is public as a recommended practice to avoid possible issues with inheritance.
 
 static function:
 - no object required for calling it
