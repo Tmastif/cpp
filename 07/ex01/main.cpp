@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 13:42:12 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/02 19:17:57 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/19 13:50:38 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int     main(void)
     iter(strArr, len, printElem<std::string>);
     std::cout << "##Modifying (non-const) and printing again:\n";
     iter(strArr, len, openZooGate<std::string>);
+    iter(strArr, len, minusOne<int>);
     iter(strArr, len, printElem<std::string>);
 
     int intArr[] = {1, 2, 3, 777};
