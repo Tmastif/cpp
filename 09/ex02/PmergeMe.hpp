@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:59:31 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/08 13:06:47 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/08 13:17:55 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class PmergeMe
         bool    parse_input(int ac, char **av);
         
 
-        //helper
+        //Helpers
         void    print_v(void);
         void    print_d(void);
 };
