@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 15:19:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/04/29 13:31:28 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/08 12:37:05 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 
 //Default constructor
-DiamondTrap::DiamondTrap(std::string name) 
+DiamondTrap::DiamondTrap(std::string name)
 : ClapTrap(name + "_clapTrap"), FragTrap(name), ScavTrap(name)
 {
     _name = name;
