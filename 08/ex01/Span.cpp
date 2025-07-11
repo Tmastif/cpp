@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 16:56:06 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/20 12:56:58 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/20 14:06:37 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,11 @@ int    Span::longestSpan()
     smallest = *min;
     return (largest - smallest);
 }
-    
+
+
+bool    Span::has(int nbr)
+{
+    if (std::find(_v.begin(), _v.end(), nbr) != _v.end())
+        return true;
+    return false;  
+};

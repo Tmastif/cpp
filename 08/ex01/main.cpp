@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 13:45:23 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/20 12:50:10 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/20 14:20:21 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <algorithm>
 
 int main(void)
 {
@@ -28,7 +29,8 @@ int main(void)
     for (int i = 0; i < 10000; i++)
     {
         randNbr = (rand() % 20000) + 1;
-        nums.push_back(randNbr);
+        // if (std::find(nums.begin(), nums.end(), randNbr) == nums.end()) 
+            nums.push_back(randNbr);
     }
     
     try
@@ -38,14 +40,14 @@ int main(void)
         std::cout << "Inserted 10000 numbers successfully" << std::endl;
 
         // Insert 3 more numbers (should fill the Span)
-        int more[] = {40, 50, 60};
+        int more[] = {20, 30, 40};
         sp.multiNumbers(more, more + 3);
         std::cout << "Inserted 3 more numbers successfully" << std::endl;
 
         // Try to insert one more (should throw)
         int extra = 60;
         sp.multiNumbers(&extra, &extra + 1);
-        std::cout << "This line should not be printed" << std::endl;
+        std::cout << "This line should not be printed if 10003 numbers were insrted" << std::endl;
     }
     catch (const std::exception& e) {
         std::cout << "Exception: " << e.what() << std::endl;

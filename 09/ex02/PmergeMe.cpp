@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:43:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/10 18:27:15 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/11 20:00:28 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,22 +164,21 @@ std::vector<int>    PmergeMe::fj_sort(std::vector<int> &seq, int &comparisments)
     
     std::vector<int> sorted_a = fj_sort(a, comparisments);
     
-    std::vector<int> result = sorted_a;
-    insert_pend_jacobsthal(result, b, comparisments);
+    insert_pend_jacobsthal(sorted_a, b, comparisments);
     if (n % 2 == 1)
     {
         int straggler_comparisons = 0;
-        binary_insert(result, straggler, straggler_comparisons);
+        binary_insert(sorted_a, straggler, straggler_comparisons);
         comparisments += straggler_comparisons;
     }
    
-    return result;
+    return sorted_a;
 };
 
 void  PmergeMe::insert_pend_jacobsthal(std::vector<int>& main, const std::vector<int>& pend, int &total_comparisons)
 {
     std::vector<int> order = jacobsthal_insertion_order(pend.size());
-    for (size_t k = 0; k < order.size(); ++k)
+    for (size_t k = 0; k < order.size(); k++)
     {
         int idx = order[k];
         int comparisons = 0;
