@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/06 15:17:56 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/07 17:34:54 by ilazar           ###   ########.fr       */
+/*   Created: 2025/07/08 13:09:05 by ilazar            #+#    #+#             */
+/*   Updated: 2025/07/08 14:46:37 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-class PmergeMe
+#include "PmergeMe.hpp"
+
+int main(int ac, char **av)
 {
-    private:
+    PmergeMe test;
+
     
 
-    public:
+
+    return test.action(ac, av);
     
 };
