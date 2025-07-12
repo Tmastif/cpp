@@ -6,15 +6,11 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/06 20:58:58 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/06 21:21:22 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/09 13:37:18 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.h"
-/*
-        Container::const_iterator     begin() const;
-        Container::iterator           end();
-        Container::const_iterator     end() const; */
 
 template <typename T, typename Container>
 typename Container::iterator     MutantStack<T, Container>::begin()

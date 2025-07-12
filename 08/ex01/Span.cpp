@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 16:56:06 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/05 18:53:38 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/09 13:38:16 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdexcept>
 #include <algorithm>
 #include <climits>
+
+Span::Span(unsigned int N) : _maxSize(N) {}
 
 Span::Span (const Span &other) : _maxSize(other._maxSize), 
 _v(other._v) {}
@@ -29,8 +31,6 @@ Span& Span::operator=(const Span &other)
 }
 
 Span::~Span() {}
-
-Span::Span(unsigned int N) : _maxSize(N) {}
 
 void    Span::addNumber(int nbr)
 {
