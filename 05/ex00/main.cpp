@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:51:30 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 15:09:13 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:15:37 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int     main(void)
         std::cout << "incrementing to a valid grade:\n";
         one.incGrade();
         std::cout << one;
-        std::cout << "incrementing to a invalid grade:\n";
+        std::cout << "incrementing to an invalid grade:\n";
         try
         {
             one.incGrade();
@@ -38,7 +38,7 @@ int     main(void)
     std::cout << "instantiating a bureaucrat with an out of range grade:\n";
     try
     {
-        Bureaucrat three("bill", 154);
+        Bureaucrat three("bill", 151);
         std::cout << three;
         std::cout << "decrementing a grade:\n";
         three.decGrade();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:51:30 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/27 12:07:12 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:56:30 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int     main(void)
     std::string target;
     std::string formName;
     AForm *form;
-    
-    int         callIntern = 1;
     
     while (1)
     {
@@ -59,22 +57,17 @@ int     main(void)
             }
             default:
                 formName = input;
-                // callIntern = 0;
-                // std::cout << "Invalid key\n";
             };
             
-            if (callIntern)
+            std::cout << "Type target name:\n";
+            std::cin >> target;
+            Intern Jimmy;
+            std::cout << "\n##Form type: " << formName << ". Target: " << target << "\n";
+            form = Jimmy.makeForm(formName, target);
+            if (form)
             {
-                std::cout << "Type target name:\n";
-                std::cin >> target;
-                Intern Jimmy;
-                std::cout << "\n##Form type: " << formName << " Target: " << target << "\n";
-                form = Jimmy.makeForm(formName, target);
-                if (form)
-                {
-                    Bureaucrat alfred("Alfred", 1);
-                    testForm(alfred, form);
-                }
+                Bureaucrat alfred("Alfred", 1);
+                testForm(alfred, form);
             }
     }   
     return (0);

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Serializer.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 12:34:49 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/01 13:53:11 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/17 15:22:51 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SERIALIZER_H
 #define SERIALIZER_H
 
-#include <cstdint>
+#include <stdint.h>
 #include <string>
 
 struct Data

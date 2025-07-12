@@ -5,34 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 13:42:12 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/17 15:48:24 by ilazar           ###   ########.fr       */
+/*   Created: 2025/07/08 13:09:05 by ilazar            #+#    #+#             */
+/*   Updated: 2025/07/08 14:46:37 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.h"
-#include <ctime>
-#include <cstdlib>
-#include <iostream>
+#include "PmergeMe.hpp"
 
-
-int     main(void)
+int main(int ac, char **av)
 {
-    Base base;
-    srand(time(NULL));
-    //pointer check
-    {
-        Base *one = base.generate();
-        base.identify(one);
-        delete (one);
-    }
+    PmergeMe test;
+
     
-    //ref check
-    Base *one = base.generate();
-    base.identify(*one);
-    delete (one);
+
+
+    return test.action(ac, av);
     
-    std::cout << "\n";
-    
-    return (0);
-}
+};

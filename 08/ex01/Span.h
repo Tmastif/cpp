@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 16:47:14 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/05 18:53:26 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/20 14:09:07 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ class Span
         void    addNumber(int nbr);
         int     shortestSpan();
         int     longestSpan();
+        bool    has(int nbr);
         
         template <typename Iter>
         void    multiNumbers(Iter begin, Iter end)

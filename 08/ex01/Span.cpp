@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/05 16:56:06 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/09 13:38:16 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/12 08:06:29 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,18 +60,22 @@ int    Span::shortestSpan()
 
 int    Span::longestSpan()
 {
-    int     smallest = INT_MAX;
-    int     largest = INT_MIN;
+    int     smallest;
+    int     largest;
 
     if (_v.size() < 2)
         throw std::runtime_error("Container has one number only");
-    for (std::vector<int>::size_type i = 0; i < _v.size(); i++)
-    {
-        if (_v[i] < smallest)
-            smallest = _v[i];
-        if (_v[i] > largest)
-            largest = _v[i];
-    }
+    std::vector<int>::iterator max = std::max_element(_v.begin(), _v.end());
+    std::vector<int>::iterator min = std::min_element(_v.begin(), _v.end());
+    largest = *max;
+    smallest = *min;
     return (largest - smallest);
 }
-    
+
+
+bool    Span::has(int nbr)
+{
+    if (std::find(_v.begin(), _v.end(), nbr) != _v.end())
+        return true;
+    return false;  
+};

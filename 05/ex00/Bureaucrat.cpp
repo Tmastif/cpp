@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 11:59:06 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/21 15:00:22 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:16:31 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ Bureaucrat::~Bureaucrat (void)
 }
 
 //FUNCTIONS
-
 std::string Bureaucrat::getName(void) const
 {
         return (_name);

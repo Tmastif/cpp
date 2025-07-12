@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:04:15 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/04 14:23:08 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/17 15:42:29 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <cstdlib>
 #include <ctime>
 
+//If the cast is valid, will get the reference to the derived class
+//if not, it throws a std::bad_cast exception.
 void Base::identify(Base &p)
 {
     try {
@@ -38,6 +40,8 @@ void Base::identify(Base &p)
     } catch (...) {}
 }
 
+//If the cast is valid, will get a pointer to the derived type
+//if not, will get a nullptr.
 void Base::identify(Base *p)
 {
     if (dynamic_cast<A*>(p) != NULL)

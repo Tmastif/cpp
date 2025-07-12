@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:47:49 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/26 15:57:24 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:23:28 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,7 @@ int     Form::getExecuteGrade(void) const
 void    Form::beSigned(const Bureaucrat &b)
 {
     if (b.getGrade() <= _signGrade)
-    {
         _isSigned = true;
-        std::cout << _name <<" has been signed\n";
-    }
     else
         throw (GradeTooLowException());
 }

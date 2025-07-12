@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:04:15 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/04 17:51:41 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/17 15:44:09 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,8 @@ class Base
 };
 
 #endif
+
+/*
+dynamic cast can be used when we have a polymorphic base class
+(class that has at least one virtual function).
+*/

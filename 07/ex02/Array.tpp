@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:49:33 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/03 15:47:56 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/19 15:17:47 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #include "Array.h"
 
 template <typename T>

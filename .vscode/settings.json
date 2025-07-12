@@ -51,8 +51,8 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "fstream": "cpp",
+        "cinttypes": "cpp",
         "list": "cpp",
-        "*.tpp": "cpp",
         "map": "cpp"
     }
 }

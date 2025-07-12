@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 15:15:40 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/26 15:55:46 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/13 13:17:43 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ class Form
 {
     private:
         std::string const _name;
-        bool _isSigned;
-        int const _signGrade;
-        int const _executeGrade;
+        bool              _isSigned;
+        int const         _signGrade;
+        int const         _executeGrade;
 
     public:
         static const int lowestGrade = 150;

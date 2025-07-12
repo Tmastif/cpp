@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:42:58 by ilazar            #+#    #+#             */
-/*   Updated: 2025/05/09 14:01:38 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/06/18 14:09:13 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,26 +24,26 @@ void    test_materiaSource(void);
 int main(void)
 {
     //MY TESTS
-    // test_inventory();
+    test_inventory();
     // test_copy();
     // test_assigment();
     // test_materiaSource();
 
-    IMateriaSource* src = new MateriaSource();
-    src->learnMateria(new Ice());
-    src->learnMateria(new Cure());
-    ICharacter* me = new Character("me");
-    AMateria* tmp;
-    tmp = src->createMateria("ice");
-    me->equip(tmp);
-    tmp = src->createMateria("cure");
-    me->equip(tmp);
-    ICharacter* bob = new Character("bob");
-    me->use(0, *bob);
-    me->use(1, *bob);
-    delete bob;
-    delete me;
-    delete src;
+    // IMateriaSource* src = new MateriaSource();
+    // src->learnMateria(new Ice());
+    // src->learnMateria(new Cure());
+    // ICharacter* me = new Character("me");
+    // AMateria* tmp;
+    // tmp = src->createMateria("ice");
+    // me->equip(tmp);
+    // tmp = src->createMateria("cure");
+    // me->equip(tmp);
+    // ICharacter* bob = new Character("bob");
+    // me->use(0, *bob);
+    // me->use(1, *bob);
+    // delete bob;
+    // delete me;
+    // delete src;
 
     
     return (0);
