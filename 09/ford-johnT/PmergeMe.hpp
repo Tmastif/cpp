@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:59:31 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/12 09:37:06 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/15 09:53:44 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ class PmergeMe
                     pairs.push_back(Pair<IndexType>(idx2, idx1));
                 ++comparisons;
             }
-            if (i < n) // straggler
+            if (i < n)
                 pairs.push_back(Pair<IndexType>(-1, indices[n - 1]));
-            // Build main_indices from larger of each pair
+            // Build main_indices from the larger of each pair
             std::vector<IndexType> main_indices;
             for (unsigned int j = 0; j < pairs.size(); ++j)
             {
@@ -79,7 +79,7 @@ class PmergeMe
             // Recursively sort the main indices
             std::vector<IndexType> sorted_main_idx =
                 fj_sort<Container, IndexType>(seq, main_indices, comparisons);
-            // Build pend_pairs in order of sorted main chain
+            // Build pend_pairs in the same order of sorted main chain
             std::vector< Pair<IndexType> > pend_pairs;
             for (unsigned int k = 0; k < sorted_main_idx.size(); ++k)
             {
@@ -89,7 +89,7 @@ class PmergeMe
                     if (pairs[j].main_idx == sorted_main)
                     {
                         pend_pairs.push_back(pairs[j]);
-                        break;
+                        break ;
                     }
                 }
             }
@@ -154,21 +154,23 @@ class PmergeMe
             std::vector<IndexType> jacobs = jacobsthal_numbers<IndexType>(m);
             std::vector<IndexType> order;
             IndexType prev = 0;
-            for (unsigned int i = 0; i < jacobs.size(); ++i)
+            for (unsigned int i = 0; i < jacobs.size(); i++)
             {
                 IndexType curr = jacobs[i];
-                for (IndexType j = curr - 1; j >= prev; --j)
+                for (IndexType j = curr - 1; j >= prev; j--)
                 {
                     if (j < m)
                         order.push_back(j);
-                    if (j == 0) break;
+                    if (j == 0)
+                        break ;
                 }
                 prev = curr;
             }
-            for (IndexType j = m - 1; j >= prev; --j)
+            for (IndexType j = m - 1; j >= prev; j--)
             {
                 order.push_back(j);
-                if (j == 0) break;
+                if (j == 0)
+                    break ;
             }
             return order;
         };
