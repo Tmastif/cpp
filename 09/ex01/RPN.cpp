@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 15:48:25 by ilazar            #+#    #+#             */
-/*   Updated: 2025/06/09 18:54:23 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/16 18:12:46 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,14 @@ RPN::RPN() {}
 
 RPN::~RPN() {}
 
-RPN::RPN(const RPN &other) { (void)other; }
+RPN::RPN(const RPN &other) : _stack(other._stack) {}
 
 RPN& RPN::operator=(const RPN &other) 
 {
-    (void)other;
+    if (this != &other)
+    {
+        _stack = other._stack;
+    }
     return *this;
 }
         
@@ -66,7 +69,7 @@ void    RPN::recurse(const std::string &input, std::string::const_iterator it)
         recurse(input, ++it);
 }
 
-//returns a string made of iterator until first space or end of string
+//returns a string until the first space or end of string
 std::string     RPN::extractArg(const std::string &input, std::string::const_iterator *it)
 {
     std::string::const_iterator space;
@@ -84,6 +87,7 @@ bool   RPN::procOperator(const std::string &arg)
 {
     int     a;
     int     b;
+    int     abort = false;
     
     if (arg == "+" || arg == "-" || arg == "/" || arg == "*")
     {
@@ -96,29 +100,45 @@ bool   RPN::procOperator(const std::string &arg)
         _stack.pop();
         a = _stack.top();
         _stack.pop();
-        _stack.push(operation(a, b, arg));
-        return true;    
+        int res = operation(a, b, arg, &abort);
+        if (abort)
+            return false;
+        _stack.push(res);
+        return true;
     }
     std::cout << "Error: invalid char." <<std::endl;
     return false;
 }
 
-int     RPN::operation(int a, int b, const std::string &arg) const
+int     RPN::operation(int a, int b, const std::string &arg, int *abort) const
 {
+    long long int result;
     switch (arg.at(0))
     {
         case '-':
-            return(a - b);
+            result = static_cast<long long>(a) - static_cast<long long>(b);
+            break ;
         case '+':
-            return(a + b);
+            result = static_cast<long long>(a) + static_cast<long long>(b);
+            break ;
         case '*':
-            return(a * b);
+            result = static_cast<long long>(a) * static_cast<long long>(b);
+            break ;
         case '/':
-            return(a / b);
-        default:
-            std::cout << "Error: operation\n";
-        return (0);
-    }
+            if (b == 0)
+            {
+                std::cout << "Error: Cannot devide by 0\n";
+                *abort = true;
+                return (0);
+            }
+            result = a / b;
+        }
+        if (result < INT_MIN || result > INT_MAX)
+        {
+            std::cout << "Error: Calculation is out of the range of int\n";
+            *abort = true;
+        }
+        return (result);
 }
 
 //adds an operand to the stack or returns an error
@@ -134,7 +154,7 @@ bool     RPN::procNum(const std::string &arg, bool *abort)
         if (std::find_if(start, arg.end(), is_not_digit) == arg.end())
         {
             num = std::atof(arg.c_str());
-            if (num < INT_MIN || num > INT_MAX)
+            if (num < (float)INT_MIN || num > (float)INT_MAX)
             {
                 std::cout << "Error: This operand is out of int range: " << arg << std::endl;
                 *abort = true;
