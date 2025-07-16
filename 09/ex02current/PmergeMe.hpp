@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 10:59:31 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/16 17:04:46 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/16 18:41:00 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,16 @@ class PmergeMe
         };
         
         // Ford-Johnson sort (returns vector of sorted indices)
-        template <typename Container>
+        template <template <class...> class Container, class T, template <class...> class IdxContainer>
         std::vector<int> fj_sort(
-            const Container &seq,
-            const std::vector<int> &indices,
+            const Container<T> &seq,
+            const IdxContainer<int> &indices,
             int &comparisons)
         {
             unsigned int n = indices.size();
             if (n <= 1)
                 return indices;
-            std::vector<Pair> pairs;
+            IdxContainer<Pair> pairs;
             unsigned int i = 0;
             for (; i + 1 < n; i += 2)
             {
