@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/09 15:48:25 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/16 18:12:46 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/16 18:20:14 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,13 +116,13 @@ int     RPN::operation(int a, int b, const std::string &arg, int *abort) const
     switch (arg.at(0))
     {
         case '-':
-            result = static_cast<long long>(a) - static_cast<long long>(b);
+            result = static_cast<long long>(a) - b;
             break ;
         case '+':
-            result = static_cast<long long>(a) + static_cast<long long>(b);
+            result = static_cast<long long>(a) + b;
             break ;
         case '*':
-            result = static_cast<long long>(a) * static_cast<long long>(b);
+            result = static_cast<long long>(a) * b;
             break ;
         case '/':
             if (b == 0)
@@ -131,7 +131,7 @@ int     RPN::operation(int a, int b, const std::string &arg, int *abort) const
                 *abort = true;
                 return (0);
             }
-            result = a / b;
+            result = static_cast<long long>(a) / b;
         }
         if (result < INT_MIN || result > INT_MAX)
         {
