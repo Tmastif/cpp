@@ -119,8 +119,7 @@ bool    Btc::exchange(void) const
                 }
             }
             else
-                std::cout << "Error: Bad input => " << iInput->first
-                 << " | " << iInput->second << "\n";
+                std::cout << "Error: Bad input => " << iInput->first << "\n";
         }
         return true;
 }
@@ -174,7 +173,7 @@ bool    Btc::validateDate(const std::string &date) const
     }
     month *= -1;
     day *= -1;
-    if (year > 0 && year < 9999)
+    if (year > 2008 && year < 9999)
     {    
         if (month <= 12)
         {

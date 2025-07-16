@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ilazar <ilazar@student.42.de>              +#+  +:+       +#+        */
+/*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:43:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/12 09:33:30 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/16 13:57:44 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,21 @@
 #include <iostream>
 #include <sstream>
 
+
+PmergeMe::PmergeMe(void) {}
+
+PmergeMe::PmergeMe (const PmergeMe &other) : v(other.v), d(other.d) {}
+PmergeMe& PmergeMe::operator=(const PmergeMe &other)
+{
+    if (this != &other)
+    {
+        v = other.v;
+        d = other.d;
+    }
+    return *this;
+}
+
+PmergeMe::~PmergeMe(void) {}
 
 bool    PmergeMe::parse_input(int ac, char **av)
 {
@@ -38,7 +53,7 @@ bool    PmergeMe::parse_input(int ac, char **av)
         d.push_back(value);
     }
     return true;
-};
+}
 
 int    PmergeMe::action(int ac, char **av)
 {
@@ -79,4 +94,4 @@ int    PmergeMe::action(int ac, char **av)
     }
     std::cerr << "Parsing failed. Please provide one or more positive integers\n";
     return 1;
-};
+}

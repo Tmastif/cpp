@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 13:09:05 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/08 14:46:37 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/16 14:00:26 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,5 @@ int main(int ac, char **av)
 {
     PmergeMe test;
 
-    
-
-
     return test.action(ac, av);
-    
 };
