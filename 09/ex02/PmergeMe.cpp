@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:43:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/17 15:18:48 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/17 16:11:51 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int    PmergeMe::action(int ac, char **av)
             for (size_t i = 0; i < sorted_idx.size(); i++)
                 std::cout << v[sorted_idx[i]] << " ";
             std::cout << std::endl;
-            std::cout << "Comparisments: " << comparisments << std::endl;
+            std::cout << "Comparisons: " << comparisments << std::endl;
             std::cout << "Time to process a range of " << v.size() << " elements with std::vector : "
             << vec_time << " us" <<  std::endl;
         }
@@ -89,7 +89,7 @@ int    PmergeMe::action(int ac, char **av)
             std::deque<int> sorted_idx = fj_sort(d, indices_d, comparisments);
             clock_t end = clock();
             double deq_time = double(end - start) / CLOCKS_PER_SEC * 100;
-            std::cout << "Comparisments: " << comparisments << std::endl;
+            std::cout << "Comparisons: " << comparisments << std::endl;
             std::cout << "Time to process a range of " << d.size() << " elements with std::deque : "
             << deq_time << " us" <<  std::endl;
         }
