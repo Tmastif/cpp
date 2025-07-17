@@ -6,7 +6,7 @@
 /*   By: ilazar <ilazar@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/08 12:43:35 by ilazar            #+#    #+#             */
-/*   Updated: 2025/07/16 13:57:44 by ilazar           ###   ########.fr       */
+/*   Updated: 2025/07/17 15:18:48 by ilazar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,16 @@ int    PmergeMe::action(int ac, char **av)
         std::cout << "Before:   ";
         print(v);
         
-        std::vector<int> indices(v.size());
+        std::vector<int> indices_v(v.size());
+        std::deque<int> indices_d(d.size());
         for (size_t i = 0; i < v.size(); i++)
-        indices[i] = i;
+            indices_v[i] = i;
+        for (size_t i = 0; i < d.size(); i++)
+            indices_d[i] = i;
         
         { // VECTOR
             clock_t start = clock();
-            std::vector<int> sorted_idx = fj_sort(v, indices, comparisments);
+            std::vector<int> sorted_idx = fj_sort(v, indices_v, comparisments);
             clock_t end = clock();
             double vec_time = double(end - start) / CLOCKS_PER_SEC * 100;
             std::cout << "After:    ";
@@ -83,7 +86,7 @@ int    PmergeMe::action(int ac, char **av)
         comparisments = 0;
         { // DEQUE
             clock_t start = clock();
-            std::vector<int> sorted_idx = fj_sort(d, indices, comparisments);
+            std::deque<int> sorted_idx = fj_sort(d, indices_d, comparisments);
             clock_t end = clock();
             double deq_time = double(end - start) / CLOCKS_PER_SEC * 100;
             std::cout << "Comparisments: " << comparisments << std::endl;
@@ -94,4 +97,100 @@ int    PmergeMe::action(int ac, char **av)
     }
     std::cerr << "Parsing failed. Please provide one or more positive integers\n";
     return 1;
+}
+
+
+//VECTOR
+// Jacobsthal insertion order
+std::vector<int> PmergeMe::jacobsthal_insertion_order_v(int m)
+{
+    std::vector<int> jacobs = jacobsthal_numbers_v(m);
+    std::vector<int> order;
+    int prev = 0;
+    for (unsigned int i = 0; i < jacobs.size(); i++)
+    {
+        int curr = jacobs[i];
+        for (int j = curr - 1; j >= prev; j--)
+        {
+            if (j < m)
+                order.push_back(j);
+            if (j == 0)
+                break ;
+        }
+        prev = curr;
+    }
+    for (int j = m - 1; j >= prev; j--)
+    {
+        order.push_back(j);
+        if (j == 0)
+            break ;
+    }
+    return order;
+}
+
+// Jacobsthal numbers up to max_n
+std::vector<int> PmergeMe::jacobsthal_numbers_v(int max_n)
+{
+    std::vector<int> jacobs;
+    int j0 = 0;
+    int j1 = 1;
+    jacobs.push_back(j1);
+    while (1)
+    {
+        int next = j1 + 2 * j0;
+        if (next > max_n)
+            break;
+        jacobs.push_back(next);
+        j0 = j1;
+        j1 = next;
+    }
+    return jacobs;
+}
+
+
+//DEQUE
+// Jacobsthal insertion order
+std::deque<int> PmergeMe::jacobsthal_insertion_order_d(int m)
+{
+    std::deque<int> jacobs = jacobsthal_numbers_d(m);
+    std::deque<int> order;
+    int prev = 0;
+    for (unsigned int i = 0; i < jacobs.size(); i++)
+    {
+        int curr = jacobs[i];
+        for (int j = curr - 1; j >= prev; j--)
+        {
+            if (j < m)
+                order.push_back(j);
+            if (j == 0)
+                break ;
+        }
+        prev = curr;
+    }
+    for (int j = m - 1; j >= prev; j--)
+    {
+        order.push_back(j);
+        if (j == 0)
+            break ;
+    }
+    return order;
+}
+
+// Jacobsthal numbers up to max_n
+std::deque<int> PmergeMe::jacobsthal_numbers_d(int max_n)
+{
+    std::deque<int> jacobs;
+    int j0 = 0;
+    int j1 = 1;
+    jacobs.push_back(j1);
+    while (1)
+    {
+        int next = j1 + 2 * j0;
+        if (next > max_n)
+            break;
+        jacobs.push_back(next);
+        j0 = j1;
+        j1 = next;
+    }
+    return jacobs;
 }
